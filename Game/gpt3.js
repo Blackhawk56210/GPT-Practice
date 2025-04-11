@@ -1,3 +1,4 @@
+console.log("Hello World!");
 // 1.Display your XP and Level
 //  #Use a <span> or <div> to show your current XP and current level.
 
