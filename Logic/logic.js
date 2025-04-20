@@ -2,14 +2,35 @@ console.log("hello world");
 
 // Write a function that takes in a price and the amount of money given, 
 // and returns the change in dollars.
-let change = paid - price;
-function getChange() {
-    // add some meath logic
+
+// You don’t define price and paid inside the function
+// they’re passed in when someone calls the function.
+
+/* Think of writing functions like a vending machine 
+It doesn't know what you're gonna put in yet — you're just designing the machine.
+*/
+function getChange(price, paid) {
+    let change = paid - price;
     if (change < 0) {
-        alert("Not enough Money!");
-    };
+        return "not enough money";
+    } else {
+        return change;
+    }
 }
 
-getChange(2.50, 5);  //2.5;
-getChange(3, 3);  //0;
-getChange(4, 2);  //"Not enough money!";
+console.log(getChange(2.50, 5));
+// “Hey vending machine, the price is $2.50, and I paid $5. What’s my change?”
+console.log(getChange(4, 20));
+
+// Logic quest 2.
+
+// write a function called isWeekend(day) that returns: 
+// "yes" if the day is saturday or sunday
+// "no" if it's any other day
+
+// hint: You’ll want to:
+// Compare the input (day) to "Saturday" and "Sunday"
+// Use if/else or a logical OR (||) to check both days
+
+isWeekend("Monday") //-> "No"
+isWeekend("Sunday") //-> "Yes"
