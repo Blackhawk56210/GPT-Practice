@@ -28,9 +28,27 @@ console.log(getChange(4, 20));
 // "yes" if the day is saturday or sunday
 // "no" if it's any other day
 
+function isWeekend(day) {
+    console.log(`${day}`);
+    if (day === "Saturday" || day === "Sunday") {
+        return "yes";
+    } else {
+        return "no";
+    }
+}
+
 // hint: You’ll want to:
 // Compare the input (day) to "Saturday" and "Sunday"
 // Use if/else or a logical OR (||) to check both days
 
-isWeekend("Monday") //-> "No"
-isWeekend("Sunday") //-> "Yes"
+console.log(isWeekend("monday")); //-> "No"
+console.log(isWeekend("Sunday")) //-> "Yes"
+
+
+// Logic 3.
+// Write a function called canVote(age) that returns:
+// "Yes" if the person is 18 or older
+// "No" if they are under 18
+
+canVote(20) //-> "Yes"
+canVote(17) //-> "No"
