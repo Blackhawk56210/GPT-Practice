@@ -50,5 +50,18 @@ console.log(isWeekend("Sunday")) //-> "Yes"
 // "Yes" if the person is 18 or older
 // "No" if they are under 18
 
-canVote(20) //-> "Yes"
-canVote(17) //-> "No"
+console.log("break in code")
+
+function canVote(age, citizen) {
+    if (age >= 18 && citizen === true) {
+        return "You can Vote"
+    } else if (age < 18) {
+        return "You must be 18 to vote"
+    } else if (age >=18 && citizen === false) {
+        return "Only citizens can vote"
+    }
+}
+
+console.log(canVote(20, true));//-> "Yes"
+console.log(canVote(17, true));
+console.log(canVote(33, false)); //-> "No"
