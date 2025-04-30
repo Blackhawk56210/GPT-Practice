@@ -30,7 +30,7 @@ let taskList = [
 function addTask() {
   let taskInput = document.getElementById("inputField");
   let task = JSON.parse(localStorage.getItem("tasks")) || [];
-  task.push({ taskName: "homework", status: "incomplete" });
+  task.push({ taskName: taskInput.value, status: "incomplete" });
   localStorage.setItem("tasks", JSON.stringify(task));
   displayTask();
   taskInput.value = "";
@@ -51,8 +51,13 @@ function displayTask() {
 }
 
 function toggleStatus(index) {
-  let task = JSON.parse(localStorage.getItem("tasks")) || [];
-  console.log(task);
+  let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  if (tasks[index]) {
+  tasks[index].status = tasks[index].status === "completed" ? "incomplete" : "completed";
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+  console.log(tasks);
+  displayTask();
+  }
 }
 
 function removeTask(index) {
