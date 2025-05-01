@@ -1,6 +1,3 @@
-console.log("I created the perfect system");
-toggleStatus();
-
 /*
 You are building a simple task manager. The user will add tasks, remove them, and mark tasks as completed.
 
@@ -20,7 +17,16 @@ Use an array to store tasks.
 Each task should be an object with taskName and status properties.
 
 Use .push(), .splice(), and .split() as needed.
-*/ 
+
+Expected Output:
+After adding "Homework", the task list should have 3 tasks.
+
+After removing "dishes", the task list should have 2 tasks.
+
+After marking "laundry" as completed, its status should change to "completed".
+*/
+console.log("I created the perfect system");
+toggleStatus();
 
 let taskList = [
     { taskName: "laundry", status: "incomplete" },
@@ -38,8 +44,14 @@ function addTask() {
 
 function displayTask() {
   let taskList = document.getElementById("taskList");
+  let filterValue = document.getElementById("filterSelect").value
   taskList.innerHTML = "";
   let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  if (filterValue === "completed") {
+    tasks = tasks.filter(tasks.filter(task => task.status === "completed"));
+  } else if (filterValue === "incomplete") {
+    tasks.filter(task => task.status === "incomplete");
+  }
   tasks.forEach((task, index) => {
     const li = document.createElement("li");
     li.innerHTML = 
@@ -47,7 +59,7 @@ function displayTask() {
     <button onclick="removeTask(${index})">remove</button>
     <input type="checkbox" ${task.status === "completed" ? "checked" : ""} onclick="toggleStatus(${index})">`;
     taskList.appendChild(li);
-  })
+  });
 }
 
 function toggleStatus(index) {
@@ -66,12 +78,3 @@ function removeTask(index) {
   localStorage.setItem("tasks", JSON.stringify(tasks));
   displayTask();
 }
-
-/*
-Expected Output:
-After adding "Homework", the task list should have 3 tasks.
-
-After removing "dishes", the task list should have 2 tasks.
-
-After marking "laundry" as completed, its status should change to "completed".
-*/
