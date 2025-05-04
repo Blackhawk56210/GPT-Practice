@@ -5,7 +5,7 @@ console.log("Chat-GPT Progress");
 let myName = "Colby";
 console.log(myName);
 
-//2. i dont know how i would do this one
+//2. Swap the values so that 'a' is 10 and 'b' is 5, using a third variable.
 let a = 5;
 let b = 10;
 let temp;
