@@ -6,7 +6,7 @@ body {
     padding: 2rem;
 }
 #cardInfo {
-    background: linear-gradient(145deg, #3b0a0a, #4b1111); 
+  background: linear-gradient(145deg, #3b0a0a, #4b1111); 
   border: 2px solid #ffd700;
   border-radius: 12px;
   padding: 1.5rem;
@@ -48,6 +48,31 @@ button:hover {
     background-color: #e6c200;
 }
 
+/* Badge Styling */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+  
+/* Monster Badge (classic red) */
+.badge-monster {
+    background-color: #a00000;
+}
+  
+/* Spell Badge (greenish) */
+.badge-spell {
+    background-color: #007a4e;
+}
+  
+/* Trap Badge (purple-ish) */
+.badge-trap {
+  background-color: #5c007a;
+}
 /* Dark theme styling */
 body.dark{
     background-color: #121212;
