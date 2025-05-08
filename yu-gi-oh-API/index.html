@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yu-Gi-Oh Card Fetcher</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="styles.css" rel="stylesheet">
+  <title>Yu-Gi-Oh Card Search</title>
 </head>
 <body>
-    <input type="text" id="card-input" placeholder="Enter Card name" />
-    <button id="fetch-btn">Fetch Card</button>
-    <div id="Card-result"></div>
+  <h1>Yu-Gi-Oh Card Search</h1>
+  <input type="text" id="cardName" placeholder="Enter card name" />
+  <button id="searchBtn">Search</button>
+  <label class="switch">
+    <input type="checkbox" id="themeToggle" />
+    <span class="slider"></span>
+  </label>
+  <div id="cardInfo"></div>
+
+  <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 </html>
