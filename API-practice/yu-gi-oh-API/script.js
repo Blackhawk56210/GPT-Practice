@@ -2,6 +2,7 @@ const input = document.getElementById("cardName");
 const button = document.getElementById("searchBtn");
 const cardDisplay = document.getElementById("cardInfo");
 const themeToggle = document.getElementById("themeToggle");
+const saveFav = document.getElementById("saveFav");
 
 themeToggle.addEventListener("change", toggleTheme);
 
@@ -38,6 +39,7 @@ button.addEventListener("click", () => {
         const def = card.def !== undefined ? `Def ${card.def}` : "";
         const level = card.level !== undefined ? `Level ${card.level}` : "";
         cardDisplay.innerHTML = `
+        <button id = "saveFav">Save</button>
         <h1>${name}</h1>
         <p class="badge ${badgeClass}">${badgeText}</p>
         <p>${level}</p>
@@ -54,6 +56,15 @@ button.addEventListener("click", () => {
     console.log(`Fetching URL: https://db.ygoprodeck.com/api/v7/cardinfo.php?name=${encodeURIComponent(cardName)}`);
     console.log(cardName);
 })
+
+saveFav.addEventListener("click", () => {
+    let cardDeck = JSON.parse(localStorage.setItem("card") || [])
+    cardDeck.push(button.addEventListener());
+});
+
+// Displaying and removing favorite cards
+
+
 
 function toggleTheme() {
     document.body.classList.toggle("dark", themeToggle.checked);
