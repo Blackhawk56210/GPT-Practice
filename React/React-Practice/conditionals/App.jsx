@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function App() {
   const [showSection, setShowSection] = useState(true);
-  const [showSectionA, setShowSectionB] = useState(true);
+  const [showSectionA, setShowSectionA] = useState(true);
   return (
     <div>
       <div style={{ padding: "20px" }}>
@@ -19,16 +19,16 @@ function App() {
         )}
       </div>
 
-      <div style={{ padding: "20px"}}>
+      <div style={{ padding: "20px" }}>
         <h1>Independent toggle</h1>
 
-        <button onClick={() => setShowSectionB((prev) => !prev)}>
+        <button onClick={() => setShowSectionA((prev) => !prev)}>
           {showSectionA ? "Hide Section" : "Show Section"}
         </button>
-        
+
         {showSectionA && (
           <div>
-            <p>This is a seperate section</p>
+            <p>This is the section you're hiding or showing 🫣</p>
           </div>
         )}
       </div>

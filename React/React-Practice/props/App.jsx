@@ -1,9 +1,14 @@
 import React from 'react'
+import ProfileCard from './profileCard'
 
-function App() {
+function App({ name, role, callSign }) {
   return (
-    <div className='text-white p-8'>
-      <h1 className='text-2xl font-bold'>Props Practice</h1>
+    <div>
+      <h1>Crew Manifest</h1>
+
+      <ProfileCard name="Colby" role="Co-Captain" callSign="JetStream" />
+      <ProfileCard name="Chris" role="Captain" callSign="SparkPlug" />
+      <ProfileCard name="Ahkillin" role="Engineer" callSign="Eagle Eye" />
     </div>
   )
 }
