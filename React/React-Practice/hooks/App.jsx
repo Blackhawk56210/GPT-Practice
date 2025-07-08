@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-function App() {
+function Counter() {
+  const [count, setCount] = useState(0);
+  const [text, setText] = useState("");
+
+
   return (
-    <div className='text-white p-8'>
-      <h1 className='text-2xl font-bold'>Hooks Practice</h1>
-    </div>
-  )
+    <>
+    <input 
+    type="text"
+    onChange={(e) => setText(e.target.value)}
+    /> 
+    <button onClick={() => setText("")}>Clear</button>
+    <p>{text}</p>
+    </>
+  );
 }
 
-export default App
+export default Counter;
